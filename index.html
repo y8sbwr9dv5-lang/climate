@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마루에코 환경재단 - 지속 가능한 생활을 위한 우리의 약속</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS 스타일 시작 */
+        :root {
+            /* 부드럽고 트렌디한 색상 팔레트 */
+            --primary-color: #38a169; /* 부드러운 그린 */
+            --secondary-color: #63b3ed; /* 부드러운 블루 */
+            --background-light: #f7fafc;
+            --text-color-light: #2d3748;
+            --section-bg-odd: #e2e8f0;
+            --section-bg-even: #ffffff;
+        }
+
+        /* 다크 모드 스타일 */
+        body.dark-mode {
+            --background-light: #1a202c;
+            --text-color-light: #f7fafc;
+            --section-bg-odd: #2d3748;
+            --section-bg-even: #1a202c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+        }
+
+        body {
+            background-color: var(--background-light);
+            color: var(--text-color-light);
+            line-height: 1.6;
+        }
+
+        /* 스크롤 시 화면 꽉 채우는 부드러운 구성 */
+        .container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory; /* 스크롤 스냅 적용 */
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            scroll-snap-align: start; /* 각 섹션 시작점에 스냅 */
+        }
+
+        .section:nth-child(odd) {
+            background-color: var(--section-bg-odd);
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--section-bg-even);
+        }
+
+        /* 섹션별 스타일 */
+        #home {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            justify-content: space-between;
+            padding-top: 80px; /* 헤더 공간 확보 */
+            padding-bottom: 80px; /* 푸터 공간 확보 */
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* 다크모드 버튼 스타일 */
+        #mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--text-color-light);
+            color: var(--text-color-light);
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.8em;
+            z-index: 90;
+        }
+
+        /* 콘텐츠 상세 스타일 (블로그 느낌) */
+        .content-card {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: var(--section-bg-even);
+            color: var(--text-color-light);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2em;
+            }
+            .content-card {
+                padding: 15px;
+            }
+        }
+        /* CSS 스타일 끝 */
+    </style>
+</head>
+<body>
+
+    <button id="mode-toggle">🌙 다크 모드</button>
+
+    <div class="container">
+        <section id="home" class="section">
+            <div>
+                <h1 style="font-size: 4em; margin-bottom: 10px;">마루에코 환경재단</h1>
+                <p style="font-size: 1.5em; font-weight: 300;">✨ 더 높은 환경 가치, 지속 가능한 내일을 위한 우리의 약속</p>
+                <div style="margin-top: 30px;">
+                    <a href="#activity" style="display: inline-block; padding: 12px 25px; background-color: white; color: var(--primary-color); text-decoration: none; border-radius: 5px; font-weight: 700; transition: background-color 0.3s;">활동 둘러보기 👇</a>
+                </div>
+            </div>
+            <div style="height: 50px;"></div>
+        </section>
+
+        <section id="activity" class="section">
+            <h2 class="section-title">🌱 핵심 활동: 지속 가능한 생활 습관 전환</h2>
+            <div class="content-card">
+                <h3>**제로 웨이스트 & 에너지 절약 교육**</h3>
+                <p>지역사회와 함께하는 생활 속 환경 교육 프로그램입니다. 자원 순환의 중요성을 알리고, 실질적인 에너지 절약 습관을 형성하도록 돕습니다.</p>
+            </div>
+            <div class="content-card">
+                <h3>**도시 생태계 복원 프로젝트**</h3>
+                <p>도심 속 작은 숲 조성, 하천 정화 등 지역 기반의 생태 복원 활동을 통해 건강한 도시 환경을 만듭니다.</p>
+            </div>
+        </section>
+
+        <section id="campaign" class="section">
+            <h2 class="section-title">📢 캠페인 참여: 함께 만드는 푸른 세상</h2>
+            <div class="content-card">
+                <h3>**'용기내 챌린지' - 다회용기 사용 캠페인**</h3>
+                <p>일회용품 대신 다회용기 사용을 인증하고 리워드를 받는 참여형 챌린지입니다. 현재 3기 참가자를 모집 중입니다!</p>
+                <button style="padding: 10px 20px; background-color: var(--secondary-color); color: white; border: none; border-radius: 5px; margin-top: 10px; cursor: pointer;">참여 신청하기</button>
+            </div>
+            <div class="content-card">
+                <h3>**나무 한 그루 심기 - 탄소 상쇄 캠페인**</h3>
+                <p>자발적인 기부를 통해 탄소 배출량만큼 나무를 심어 기후 위기에 대응하는 대규모 프로젝트입니다.</p>
+            </div>
+        </section>
+
+        <section id="news" class="section">
+            <h2 class="section-title">📰 뉴스 & 스토리: 마루에코의 발자취</h2>
+            <div class="content-card" style="text-align: left;">
+                <p style="font-size: 0.9em; color: #a0aec0;">2025.10.28</p>
+                <h3>[활동 후기] 지역 초등학교 환경 교육 성료!</h3>
+                <p>지난주, OO 초등학교 학생들과 함께 재활용 분리수거 교육을 진행했습니다. 아이들의 적극적인 참여로 교육의 의미를 더했습니다. <a href="#" style="color: var(--primary-color);">더 읽기</a></p>
+            </div>
+            <div class="content-card" style="text-align: left;">
+                <p style="font-size: 0.9em; color: #a0aec0;">2025.10.20</p>
+                <h3>[환경 이슈] 미세 플라스틱, 우리 식탁을 위협하다</h3>
+                <p>최근 연구 결과에 따르면... 마루에코 재단의 대응 방안을 소개합니다. <a href="#" style="color: var(--primary-color);">더 읽기</a></p>
+            </div>
+        </section>
+
+        <section id="support" class="section">
+            <h2 class="section-title">🤝 후원 & 문의: 지속 가능한 연결</h2>
+            <div class="content-card">
+                <h3>**함께 미래를 만들어 주세요**</h3>
+                <p>정기/일시 후원은 마루에코 재단의 모든 활동을 지속하는 힘이 됩니다. 소중한 참여를 기다립니다.</p>
+                <button style="padding: 12px 25px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; margin-top: 15px; font-weight: 700; cursor: pointer;">온라인 후원하기</button>
+            </div>
+            <div class="content-card">
+                <h3>**재단 문의**</h3>
+                <p>전화: 02-123-4567 | 이메일: contact@marueco.org</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 마루에코 환경재단. All Rights Reserved.</p>
+        <p style="margin-top: 5px; font-weight: 700;">이 홈페이지의 지적 소유권은 **충렬여고 1학년 3반**에게 있습니다.</p>
+    </footer>
+
+    <script>
+        /* JavaScript 시작 */
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+
+        // 다크 모드 토글 기능
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // 버튼 텍스트 변경
+            if (body.classList.contains('dark-mode')) {
+                modeToggle.textContent = '☀️ 라이트 모드';
+                modeToggle.style.color = 'white'; // 다크 모드 시 글자 색상 변경
+                modeToggle.style.borderColor = 'white';
+            } else {
+                modeToggle.textContent = '🌙 다크 모드';
+                modeToggle.style.color = 'var(--text-color-light)'; // 라이트 모드 시 글자 색상 복구
+                modeToggle.style.borderColor = 'var(--text-color-light)';
+            }
+        });
+        /* JavaScript 끝 */
+    </script>
+
+</body>
+</html>
